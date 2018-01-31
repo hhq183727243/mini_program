@@ -1,0 +1,32 @@
+<view class="weui-article">
+	<view class='h1'>京东</view>
+	<view style='text-align: justify;'>
+		<view class="title h2">企业简介</view>
+		<view>
+			<view>
+				京东于2004年正式涉足电商领域。2016年，京东集团市场交易额达到9392亿元*。京东是中国收入规模最大的互联网企业。2017年7月，京东再次入榜《财富》全球500强，位列第261位，成为排名最高的中国互联网企业，在全球仅次于亚马逊和Alphabet，位列互联网企业第三。
+			</view>
+			<view>
+				2014年5月，京东集团在美国纳斯达克证券交易所正式挂牌上市，是中国第一个成功赴美上市的大型综合型电商平台。2015年7月，京东凭借高成长性入选纳斯达克100指数和纳斯达克100平均加权指数。
+			</view>
+		</view>
+		<view>
+			<view>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<view class="weui-footer">
+	<view class="weui-footer__links">
+		<view class="weui-footer__link">底部链接</view>
+	</view>
+	<view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+</view>
+
+<view class='footer-kong'></view>

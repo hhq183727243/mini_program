@@ -1,0 +1,36 @@
+<!-- 订阅页面 -->
+<view>
+    <view class="weui-btn-area">
+        请勿泄露患者隐私，本网站将删除含有患者隐私的图片及病例
+    </view>
+
+    <view class="weui-cells m_top10">
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="weui-cell">
+                <radio value="0" checked="{{isAll}}"/>全部案例
+            </label>
+            <label class="weui-cell">
+                <radio value="1" checked="{{!isAll}}"/>自定义
+            </label>
+        </radio-group>
+    </view>
+
+    <view class="weui-cells m_top10" wx:if="{{!isAll}}">
+        <navigator class="weui-cell weui-cell_select" url="dictionarySelect/dictionarySelect?flag=1">
+            <view class="weui-cell_hd"><label class="weui-label">临床科室</label></view>
+            <view class="weui-cell_bd ellipsis">
+                <text wx:for="{{selectedDepartment}}">{{item.name}}、</text>
+            </view>
+        </navigator>
+        <navigator class="weui-cell weui-cell_select" url="dictionarySelect/dictionarySelect?flag=2">
+            <view class="weui-cell_hd"><label class="weui-label">关联标签</label></view>
+            <view class="weui-cell_bd ellipsis">
+                <text wx:for="{{selectedTag}}">{{item.name}}、</text>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="weui-btn-area">
+        <button type="primary" bindtap="bindSubmit">确认保存</button>
+    </view>
+</view>

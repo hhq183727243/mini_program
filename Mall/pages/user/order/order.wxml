@@ -1,0 +1,4 @@
+<import src="../../common/weui_template.wxml"/>
+
+<template is="navbar" 
+			data="{{currentIndex: currentIndex,labels: ['全部订单','待付款','待收货','已完成'],panelContent: 'order',list: orderList}}"/>

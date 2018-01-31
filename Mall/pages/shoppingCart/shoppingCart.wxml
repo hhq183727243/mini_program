@@ -1,0 +1,65 @@
+<block wx:if="{{cartList.length == 0}}">
+	<view wx:if="{{cartList.length == 0}}" class="view-empty">
+		<view class="empty_cart_wrap">
+			<image src="/images/empty_cart.png"></image>
+		</view>
+		
+		<view class="mt20">购物车还是空的</view>
+	</view>
+	<view class="weui-btn-area">
+		<button type="primary" formType="submit">去逛逛</button>
+	</view>
+</block>
+<block wx:else>
+<view class="weui-panel weui-panel_access">
+	<view class="weui-panel__hd">
+		<image class="icon" src="/images/icon/store.png"></image>
+		<text>供应商：{{'迅康信息技术有限公司'}}</text>
+	</view>
+	<view class="weui-panel__bd">
+		<block wx:for="{{cartList}}" wx:key="id">
+			<view class="weui-media-box weui-media-box_appmsg">
+				<icon class="di mr5" type="{{item.selected ? 'success' : 'circle'}}" size="20"
+					color="{{item.selected ? 'red' : ''}}"  
+					bindtap="bindCheckbox" 
+					data-index="{{index}}"/>
+
+				<view class="weui-media-box__hd">
+					<image class="weui-media-box__thumb" src="/images/test/tu5.jpg" />
+				</view>
+				<view class="weui-media-box__bd">
+					<navigator class="media_title" url="">华为荣耀7i手机壳 ATH-AL00全包磨砂TL00H保护套CL男女款防摔外壳</navigator>
+					<view class="mt5 fix">
+						<text class="weui-cell_warn l lh26">￥{{item.price + '.00'}}</text>
+						<view class="stepper r">
+							<!-- 减号 -->
+							<text class="{{item.buyNumber == 1 ? 'disabled' : ''}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+							<!-- 数值 -->
+							<input type="number" data-index="{{index}}" bindchange="bindManual" value="{{item.buyNumber}}" />
+							<!-- 加号 -->
+							<text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+
+<view class="footer-kong"></view>
+<view class="carts-footer top-line">
+	<view class="weui-flex">
+		<view class="pt10" bindtap="bindSelectAll">
+			<icon type="{{selectedAllStatus ? 'success' : 'circle'}}" color="{{selectedAllStatus ? 'red' : ''}}" size="20" />
+			<text>全选</text>
+		</view>
+		<view class="weui-flex__item tr">
+			<view class="pt10">总计：<text class="weui-cell_warn">￥: {{total}}</text></view>
+			<view class="f12 g9">不含运费</view>
+		</view>
+		<view class="weui-flex__item">
+			<view class="button" bindtap="bindCheckout">去结算</view>
+		</view>
+	</view>
+</view>
+</block>

@@ -1,0 +1,96 @@
+<view class="head">
+	<image src='/images/logo.png'></image>
+
+	<view class="search-view">
+		<view class="weui-icon-search"></view>
+		<text class='g9'>搜索</text>
+	</view>
+</view>
+
+<!--快速入口   -->
+<view class="kuaisu-rukou bottom-line">
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-1'></view>
+				<view class='mt5'>涂料计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-2'></view>
+				<view class='mt5'>地板计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-3'></view>
+				<view class='mt5'>壁纸计算器</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-4'></view>
+				<view class='mt5'>墙砖计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-5'></view>
+				<view class='mt5'>窗帘计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-6'></view>
+				<view class='mt5'>地砖计算器</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<view class="mt15 bgwh pb10">
+	<view class="section-title top-line">
+		<text class="f16">热门装修</text>
+		<text class="r weui-cell_link">更多 ></text>
+	</view>
+
+	<scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+		<view class="demo-item" wx:for="{{demoList}}">
+			<image src='/images/test/p{{index}}.jpg'></image>
+			<view class="demo-info ell">现代简约客厅沙发背景墙清新装修效果图</view>
+		</view>
+	</scroll-view>
+	
+	<view class="weui-btn-area">
+		<button type='warn'>免费获取装修报价</button>
+	</view>
+</view>
+
+
+<view class="mt15 bgwh">
+	<view class="section-title top-line">
+		<text class="f16">装修学堂</text>
+		<text class="r weui-cell_link">更多 ></text>
+	</view>
+	
+	<view class="weui-panel weui-panel_access" style='margin-top: 0;'>
+        <view class="weui-panel__bd">
+			<view class='weui-media-box_small-appmsg'>
+				<view class="weui-cells">
+					<navigator class="weui-cell weui-cell_access" wx:for="{{articalList}}" wx:key="*this">
+						<view class="weui-cell__hd">
+							<image src="/images/icon/hot.png" />
+						</view>
+						<view class="weui-cell__bd">2017年要装修担心被坑怎么办？</view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="h20"></view>

@@ -1,0 +1,42 @@
+<image style="background-color: {{entity.synopsis}};" mode="aspectFit" class="zxth" src="{{baseUrl + entity.path}}"></image>
+
+<view class="weui-footer_fixed-bottom">
+	<view class="weui-btn-area">
+		<button type="warn" bindtap='showForm'>立即抢购</button>
+	</view>
+</view>
+
+<view class="fixed-form" wx:if="{{show}}">
+	<icon type="clear" size="40" color='#32cbdd' bindtap='hideForm'/>
+	<form class="p15" bindsubmit="formSubmit">
+		<view class="weui-cells">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="contact" maxlength="20" type="text" placeholder="请输入您的姓名" />
+				</view>
+			</view>
+		</view>
+
+		<view class="weui-cells">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="mobilephone" maxlength="11" type="number" placeholder="请输入手机号" />
+				</view>
+			</view>
+		</view>
+
+		<view class="weui-cells">
+			<view class="weui-cell weui-cell_select">
+				<view class="weui-cell__bd" bindtap="showAddressSelect">
+					{{region[0]}}
+					{{region[1]}}
+					{{region[2]}}
+				</view>
+			</view>
+		</view>
+
+		<button class="mt20" type='warn' formType="submit">立即报名</button>
+	</form>
+</view>
+
+<include src="/pages/selectAddress/selectAddress.wxml"/>

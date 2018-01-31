@@ -1,0 +1,62 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/user/user",
+        "pages/user/order/order",
+        "pages/user/coupon/coupon",
+        "pages/user/address/address",
+        "pages/user/setUp/setUp",
+        "pages/user/setUp/aboutUs/aboutUs",
+        "pages/user/login/login",
+        "pages/user/password/password",
+        "pages/user/password/reset/reset",
+        "pages/user/register/register",
+        "pages/user/userSetting/userSetting",
+        "pages/user/userSetting/dictionarySelect/dictionarySelect",
+        "pages/common/result/result",
+        "pages/user/address/add/add",
+        "pages/shoppingCart/shoppingCart",
+		"pages/production/production",
+        "pages/production/detail/detail",
+        "pages/comment/comment",
+        "pages/user/aboutUs/aboutUs",
+        "pages/user/aboutUs/detail/detail",
+        "pages/user/aboutUs/message/message",
+        "pages/pay/pay",
+        "pages/pay/chooseAddress/chooseAddress",
+        "pages/index2/index2",
+        "pages/conditionSelect/conditionSelect"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#f30213",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "position": "bottom",
+        "color": "#333",
+        "selectedColor": "#f30213",
+        "backgroundColor": "#f8f8f8",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/nav/home_0.png",
+                "selectedIconPath": "images/nav/home_1.png",
+                "text": "首页"
+            },
+			{
+				"pagePath": "pages/conditionSelect/conditionSelect",
+				"iconPath": "images/nav/type_0.png",
+				"selectedIconPath": "images/nav/type_1.png",
+				"text": "分类"
+			},
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "images/nav/user_0.png",
+                "selectedIconPath": "images/nav/user_1.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

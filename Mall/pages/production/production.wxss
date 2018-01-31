@@ -1,0 +1,26 @@
+/* pages/production/production.wxss */
+.filter{ background-color: #fff; }
+.f-sort{
+	text-align: center;
+	padding: 10px 0;
+}
+
+.production_info{
+	font-size: 14px;
+	color: #999;
+}
+
+.search_head{
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+/* 高度补充 */
+.reflesh_panel{
+	height: 82px;
+	text-align: center;
+}
+.reflesh_panel image{height: 30px; width: 30px; margin:40px auto 0;}

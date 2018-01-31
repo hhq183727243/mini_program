@@ -1,0 +1,41 @@
+/* pages/picker/picker.wxss */
+
+.picker-wrap{
+	z-index: 99;
+    position: fixed;
+    left: 0;
+	bottom: 0;
+	width: 100%; 
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.46);
+}
+
+.picker-wrap .weui-picker__hd{
+	position: absolute;
+	left: 0;
+	bottom: 250px;
+	width: 100%; 
+	box-sizing: border-box;
+}
+
+.picker-view {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%; 
+	height: 250px;
+	background-color: #fff;
+}
+.addr-item {
+    line-height: 40px;
+    text-align: center;
+}
+
+.show {
+    text-align: center;
+    margin: 20px;
+    height: 40px;
+}
+.choose {
+    margin: 20px 0;
+}

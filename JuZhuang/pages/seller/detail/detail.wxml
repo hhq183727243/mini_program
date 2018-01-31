@@ -1,0 +1,60 @@
+<view class="page">
+	<view class='info'>
+		<image class="bg" src='/images/seller_bg.jpg'></image>
+
+		<view class='p10 rel zx2 wh'>
+			<image mode='aspectFit' class="seller-logo" src="{{baseUrl + seller.picture}}"></image>
+			<view class="mt10 f16">{{seller.name}}</view>
+			<view class="mt10">
+				<text>案例数：{{seller.productionNumber}}</text>
+				<text class="ml20">信赖度：{{seller.credit}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-cells">
+		<view class="weui-cell weui-cell_access">
+			<view class="weui-cell__hd">
+				<image src="/images/icon/complain.png" />
+			</view>
+			<view class="weui-cell__bd weui-cell_primary ">公司介绍</view>
+		</view>
+		<view class="weui-cell weui-cell_access">
+			{{seller.synopsis}}
+		</view>
+	</view>
+
+	<view class="weui-cells">
+		<view class="weui-cell weui-cell_access">
+			<view class="weui-cell__hd">
+				<image src="/images/icon/area.png" />
+			</view>
+			<view class="weui-cell__bd weui-cell_primary ">服务区域</view>
+		</view>
+		<view class="weui-cell weui-cell_access">
+			{{'' + seller.province + seller.city + seller.district+seller.address }}
+		</view>
+	</view>
+
+	<view class="weui-cells">
+		<view class="weui-cell weui-cell_access">
+			<view class="weui-cell__hd">
+				<image src="/images/icon/case.png" />
+			</view>
+			<view class="weui-cell__bd weui-cell_primary">装修案例</view>
+		</view>
+	</view>
+	<view>
+		<view class="case-item" wx:for="{{caseList}}" wx:key="id">
+			<image class="case-pic" src='{{baseUrl + item.picture}}'></image>
+			<view class="weui-flex mt10 f13 g9">
+				<view class="ell">{{item.name}}</view>
+			</view>
+			<view class="weui-flex mt5 f13 g9">
+				<view class="weui-flex__item">{{item.thirdType + ' | ' + item.location + ' | 预估价' + item.tag}}</view>
+			</view>
+		</view>
+	</view>
+
+	<include src="/pages/common/loadMore.wxml" />
+</view>

@@ -1,0 +1,75 @@
+<view class="page">
+    <form bindsubmit="formSubmit" class="bgwh pb10">
+        <view class="weui-cells" style='margin-top:0'>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="contact" type="text" placeholder="请输入您的昵称" />
+                </view>
+            </view>
+
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="mobilephone" type="number" placeholder="请输入手机号" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd" bindtap="showAddressSelect">
+                    {{region[0]}} {{region[1]}} {{region[2]}}
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="mt20 f16" type='warn' formType="submit">获取推荐（1-4家星级装修公司）</button>
+        </view>
+    </form>
+
+    <view class='mt20 bgwh'>
+        <view class="bottom-line weui-flex">
+            <view class="weui-flex__item">
+                <view class="ks-item ell" bindtap="showAddressSelect">{{region[2]}}</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="ks-item">
+                    <picker bindchange="bindSelectChange" data-flag='0' value="{{index0}}" range="{{conditions[0]}}" range-key="name">
+                        {{conditions[0][index0].name}}
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="ks-item">
+                    <picker bindchange="bindSelectChange" data-flag='1' value="{{index1}}" range="{{conditions[1]}}">
+                        {{conditions[1][index1]}}
+                    </picker>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access mt10">
+        <view class="weui-panel__bd">
+            <block wx:for="{{sellerList}}" wx:key="id">
+                <navigator class="weui-media-box weui-media-box_appmsg" url="detail/detail?id={{item.id}}">
+                    <view class="weui-media-box__hd">
+                        <image mode='aspectFit' class="weui-media-box__thumb" src="{{baseUrl + item.picture}}" />
+                    </view>
+                    <view class="weui-media-box__bd rel">
+                        <view class="weui-media-box__title">{{item.name}}</view>
+                        <view class="g9 f13 mt5">案例数：{{item.productionNumber}}</view>
+                        <view class="g9 f13 mt5">信赖度：{{item.credit}} 星</view>
+
+                        <view class="free-design-btn" catchtap="goFreeDesignPage">
+							<button type="warn" size="mini">免费设计</button>
+						</view>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+
+    <include src="/pages/common/loadMore.wxml" />
+</view>
+
+
+<include src="/pages/selectAddress/selectAddress.wxml" />

@@ -1,0 +1,12 @@
+<!-- 订阅页面 -->
+<view class="text_center">
+    <view class="logo_wrap">
+        <image class="logo" src="../../../../images/icon/logo.png" />
+        <view class="m_top10">迅康图片案例 1.0.1</view>
+    </view>
+    <view class="m_top20 footer f_size12">
+        <view>厦门迅康医疗信息技术有限责任公司 版权所有 </view>
+        <view class="m_top5">Copyright©2017 Fastrack Medinfo Technology.</view>
+        <view class="m_top5">All Rights Reserved.</view>
+    </view>
+</view>

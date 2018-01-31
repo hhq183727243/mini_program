@@ -1,0 +1,61 @@
+<view class="pay-head">
+	<view class="weui-cells pay-head-inner">
+		<navigator class="weui-cell weui-cell_access" url='chooseAddress/chooseAddress'>
+			<view class="weui-cell__bd">
+				<view>刘德华，13898232228</view>
+				<view class="f14 g6 mt5">福建 厦门市 思明区 火炬高新区软件园一期创新大厦B区202室</view>
+			</view>
+			<view class="weui-cell__ft"></view>
+		</navigator>
+	</view>
+</view>
+
+<view class="weui-panel weui-panel_access">
+	<view class="weui-panel__hd">
+		<text>供应商：{{'迅康信息技术有限公司'}}</text>
+	</view>
+	<view class="weui-panel__bd">
+		<view class="weui-media-box weui-media-box_appmsg">
+			<view class="weui-media-box__hd">
+				<image class="weui-media-box__thumb" src="/images/test/tu1.jpg" />
+			</view>
+			<view class="weui-media-box__bd ">
+				<view class="media_title">华为荣耀7i手机壳 ATH-AL00全包磨砂TL00H保护套CL男女款防摔外壳</view>
+				<view class="mt5">
+					<text class="weui-cell_warn f16">¥2400.00</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="weui-panel__ft">
+		<view class="weui-cell weui-cell_access weui-cell_link">
+			配送方式：快递，免运费
+		</view>    
+	</view>
+</view>
+
+<view class="weui-form-preview mt10">
+	<view class="weui-form-preview__hd">
+		<view class="weui-form-preview__item">
+			<label class="weui-form-preview__label">实付金额</label>
+			<text class="weui-form-preview__value weui-cell_warn">¥2400.00</text>
+		</view>
+	</view>
+	<view class="weui-form-preview__bd">
+		<view class="weui-form-preview__item">
+			<label class="weui-form-preview__label">商品金额</label>
+			<span class="weui-form-preview__value">+¥2400.00</span>
+		</view>
+		<view class="weui-form-preview__item">
+			<label class="weui-form-preview__label">运费</label>
+			<span class="weui-form-preview__value">+￥0.00</span>
+		</view>
+		<view class="weui-form-preview__item">
+			<label class="weui-form-preview__label">优惠券</label>
+			<span class="weui-form-preview__value">-￥0.00</span>
+		</view>
+	</view>
+	<view class="weui-form-preview__ft">
+		<button class="weui-form-preview__btn weui-form-preview__btn_primary">确认支付</button>
+	</view>
+</view>

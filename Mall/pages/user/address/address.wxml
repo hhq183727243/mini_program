@@ -1,0 +1,28 @@
+
+<view class="weui-form-preview mb10" wx:for="{{addressList}}" wx:key="id">
+	<view class="address">
+		<view>刘德华，13898232228</view>
+		<view>福建 厦门市 思明区 火炬高新区软件园一期创新大厦B区202室</view>
+	</view>
+	<view class="weui-form-preview__ft">
+		<view class="address weui-msg__desc">
+			<label class="checkbox">
+				<radio value=""/>{{item.value}}设为默认地址
+			</label>
+			<view class="r">
+				<navigator class="mr10 di" url='add/add?id={{item.id}}'>编辑</navigator>
+				<text>删除</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="weui-btn-area">
+	<view class="weui-flex">
+		<view class="weui-flex__item pr5">
+			<navigator url="add/add"><button type="warn">手动添加</button></navigator>
+		</view>
+		<view class="weui-flex__item pl5"><button type="primary" bindtap="getAddressFromWechat">微信添加</button></view>
+	</view>
+</view>
+<view class="h10"></view>

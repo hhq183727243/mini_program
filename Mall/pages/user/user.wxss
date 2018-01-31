@@ -1,0 +1,11 @@
+.userinfo{ 
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff; 
+}
+
+.userhead{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}

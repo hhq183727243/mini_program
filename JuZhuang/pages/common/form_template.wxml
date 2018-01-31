@@ -1,0 +1,11 @@
+<!--cell 普通输入框  -->
+<template name="input_text">
+    <view class="weui-cell">
+		<view class="weui-cell__hd">
+			<label class="weui-label rel"><text class="required weui-cell_warn" wx:if="{{base[4]}}">* </text>{{base[0]}}</label>
+		</view>
+		<view class="weui-cell__bd">
+			<input class="weui-input" type="{{base[1]}}" name="{{base[2]}}" value="{{value}}" placeholder="{{base[3]}}"/>
+		</view>
+	</view>
+</template>

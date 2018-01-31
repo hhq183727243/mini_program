@@ -1,0 +1,2 @@
+/* pages/user/myCollected/myCollected.wxss */
+.icon{ width: 16px; height: 16px; margin-right: 5px; }

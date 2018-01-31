@@ -1,0 +1,39 @@
+<swiper duration="300" style="height: 80%;" current="{{swiperIndex}}" bindchange="bindSwiperChange">
+    <block wx:for="{{caseList}}" wx:key="id">
+        <swiper-item>
+            <image mode='aspectFit' src="{{baseUrl + item.picture}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="p15 wh product-title">
+	<view class="ell f16"><image class="seller-logo" src="{{baseUrl + caseList[currentIndex].seller.picture}}"></image>{{caseList[currentIndex].seller.name}}</view>
+</view>
+
+<view class="p15 wh product-info">
+	<view>{{product.name}}</view>
+	<view class="weui-flex mt10">
+		<view class="weui-flex__item">{{product.readNumber}} 浏览</view>
+		<view class="weui-flex__item rel tr">
+			<view bindtap="bindToggleConllect" data-id="{{product.id}}">
+				<image class="icon" src="/images/icon/{{isCollected ? 'favor_1.png' : 'favor_wh.png'}}"></image>{{product.collectionNumber}}
+			</view>
+			<button wx:if="{{!loginStatus && canIUse}}" class="get-userinfo-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo"></button>
+		</view>
+	</view>
+</view>
+
+<view class="weui-tabbar">
+	<view class="weui-flex pct100">
+		<view class="weui-flex__item">
+			<navigator class="button primary" url="/pages/payDesign/payDesign?id={{product.sellerId}}">找Ta设计
+				<text class="font">付费</text>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class="button warn" url='/pages/freeDesign/freeDesign'>免费设计
+				<text class="font">限免</text>
+			</navigator>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,55 @@
+<view class="page">
+	<view class="weui-flex header">
+		<view class="p15">
+			<image mode='aspectFit' class="seller-logo" src="{{baseUrl + seller.picture}}"></image>
+		</view>
+		<view class="weui-flex__item">
+			<view class="f16">{{seller.name}}</view>
+			<view class="mt5">设计计费：{{seller.column1 || '面议'}}</view>
+		</view>
+	</view>
+
+	<form bindsubmit="formSubmit">
+		<view class="weui-cells__title">留下您的信息，让Ta联系您</view>
+		<view class="weui-cells">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="contact" maxlength="20" type="text" placeholder="您的姓名" />
+				</view>
+			</view>
+
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="mobilephone" maxlength="11" type="number" placeholder="手机号码" />
+				</view>
+			</view>
+
+			<view class="weui-cell weui-cell_select">
+				<view class="weui-cell__bd" bindtap="showAddressSelect">
+					{{region[0]}}
+					{{region[1]}}
+					{{region[2]}}
+				</view>
+			</view>
+
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="detail" type="number" placeholder="房屋面积m2" />
+				</view>
+			</view>
+
+			<view class="weui-cell">
+                <view class="weui-cell__bd">
+					<input class="weui-input" name="column3" type="text" placeholder="备注信息（选填）" />
+                </view>
+            </view>
+		</view>
+
+		<view class="weui-btn-area">
+			<button class="mt20" type='warn' formType="submit">立即申请</button>
+		</view>
+		<view class="footer-kong"></view>
+	</form>
+</view>
+
+<include src="/pages/selectAddress/selectAddress.wxml"/>

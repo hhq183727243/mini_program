@@ -1,0 +1,107 @@
+<image class="ad-banner" src="/images/ad.png"></image>
+
+<view class="p10">
+	<view class="calc-form p15 bgwh">
+		<view class="num-area">
+			<view class="yusuan">你家的装修预算</view>
+			<view class="num-frame">
+				<view class="num-window">
+					<image wx:for="{{jisuanqi}}" src="/images/zxbj/zxbj_n{{item}}.png"></image>
+				</view>
+				<view class="yuan">元</view>
+			</view>
+			<view class="result-queson">
+				<view>
+					<text class="mr10">人工费：？元</text>
+					<text class="ml10">材料费：？元</text>
+				</view>
+				<view>
+					<text class="mr10">设计费：？元</text>
+					<text class="ml10">质检费：？元</text>
+				</view>
+			</view>
+		</view>
+		<form class="zxd-form" bindsubmit="formSubmit">
+			<view class="weui-cells">
+				<view class="weui-cell bgf0">
+					<view class="weui-cell__bd">
+						<input class="weui-input" name="contact" maxlength="20" type="text" placeholder="请输入您的姓名" />
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells">
+				<view class="weui-cell weui-cell_select bgf0">
+					<view class="weui-cell__bd" bindtap="showAddressSelect">
+						{{region[0]}}
+						{{region[1]}}
+						{{region[2]}}
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cells">
+				<view class="weui-cell bgf0">
+					<view class="weui-cell__bd">
+						<input class="weui-input" name="detail" maxlength="10" type="number" placeholder="请输入您的房屋面积" />
+					</view>
+					<view class="g9">m²</view>
+				</view>
+			</view>
+
+			<view class="weui-cells">
+				<view class="weui-cell weui-cell_select bgf0">
+					<view class="weui-cell__bd" bindtap="showStyleSelect">
+						{{list1[styleSelected[0]]}}
+						{{list2[styleSelected[1]]}}
+						{{list3[styleSelected[2]]}}
+						{{list4[styleSelected[3]]}}
+						{{list5[styleSelected[4]]}}
+					</view>
+				</view>
+			</view>
+			<!-- <p class="oarea-remind">* 输入面积小于30㎡时，报价结果将按30㎡计算</p> -->
+
+			<view class="weui-cells">
+				<view class="weui-cell bgf0">
+					<view class="weui-cell__bd">
+						<input class="weui-input" name="mobilephone" maxlength="11" type="number" placeholder="输入号码报价结果将发送到您的手机" />
+					</view>
+				</view>
+			</view>
+
+			<button class="mt20" type='warn' formType="submit">立即计算</button>
+		</form>
+	</view>
+</view>
+
+<view class="picker-wrap" catchtouchmove="handleTap" hidden="{{!styleShow}}">
+	<view class="weui-picker__hd"> 
+		<view class="weui-picker__action" bindtap='cancelStyle'>取消</view> 
+		<view class="weui-picker__action" bindtap='selectStyle'>确定</view> 
+	</view>
+	<picker-view class="picker-view" indicator-style="height: 40px;" bindchange="bindStyleChange">
+		<picker-view-column>
+			<view wx:for="{{list1}}" class="addr-item">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{list2}}" class="addr-item">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{list3}}" class="addr-item">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{list4}}" class="addr-item">{{item}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{list5}}" class="addr-item">{{item}}</view>
+		</picker-view-column>
+	</picker-view>
+</view>
+
+<image class="m_from" src="/images/m_from.png"></image>
+<view class="h20"></view>
+
+<include src="/pages/common/footer.wxml"/>
+
+<include src="/pages/selectAddress/selectAddress.wxml"/>

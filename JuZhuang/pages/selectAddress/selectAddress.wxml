@@ -1,0 +1,17 @@
+<view class="picker-wrap" catchtouchmove="handleTap" wx:if="{{addressShow}}">
+	<view class="weui-picker__hd"> 
+		<view class="weui-picker__action" bindtap='cancelAddress'>取消</view> 
+		<view class="weui-picker__action" bindtap='selectAddress'>确定</view> 
+	</view>
+	<picker-view class="picker-view" indicator-style="height: 40px;" value="{{addressSelected}}" bindchange="bindAddressChange">
+		<picker-view-column>
+			<view wx:for="{{proviceData}}" class="addr-item">{{item.name}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{cityData}}" class="addr-item">{{item.name}}</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view wx:for="{{districtData}}" class="addr-item">{{item.name}}</view>
+		</picker-view-column>
+	</picker-view>
+</view>

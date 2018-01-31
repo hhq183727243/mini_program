@@ -1,0 +1,35 @@
+
+<template name="condition">
+	<view class="weui-tab" style="min-height: 42px;">
+		<view class="weui-navbar">
+			<!--筛选条件  -->
+			<view class="bottom-line weui-flex pct100">
+				<view class="weui-flex__item" wx:for="{{labels}}">
+					<view class="ks-item ell {{(conditionIndex == index && show) ? 'active' : ''}}" 
+						hover-class='bg-dark' 
+						bindtap='toggleMenu' 
+						data-index="{{index}}">{{item}}</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="weui-tab__panel" hidden='{{!show}}' style="padding-top:42px;">
+			<!--条件列表  -->
+			<view class="weui-media-box_small-appmsg bgwh">
+				<view class="weui-cells" 
+					wx:for="{{conditions}}" 
+					wx:for-index="idx"
+					hidden='{{!show || conditionIndex != idx}}'>
+					<view class="weui-cell weui-cell_access" 
+						wx:for="{{conditions[idx]}}"
+						bindtap="bindSelectCondition"
+						data-idx="{{idx}}"
+						data-index="{{index}}">
+						<view class="weui-cell__bd">{{item.name}}</view>
+						<view class="weui-cell__ft"></view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>

@@ -1,0 +1,40 @@
+<import src="/pages/common/condition_template.wxml"/>
+
+<view class="head weui-tab {{show ? '' : 'h-auto'}}">
+	<view class="weui-navbar">
+		<view bindtap="changeType" data-idx='0' class="weui-navbar__item {{tabFlag == 0 ? 'weui-bar__item_on' : ''}}">定制</view>
+		<view bindtap="changeType" data-idx='1' class="weui-navbar__item {{tabFlag == 1 ? 'weui-bar__item_on' : ''}}">套图</view>
+	</view>
+
+	<view class="weui-tab__panel {{show ? '' : 'h-auto'}}" style="padding-bottom:0">
+		<view class="hpct100" hidden="{{tabFlag == 1}}">
+			<template is="condition" data="{{labels: labels0,conditionIndex: conditionIndex,conditions: conditions,show: show}}"/>
+		</view>
+		<view class="hpct100" hidden="{{tabFlag == 0}}">
+			<template is="condition" data="{{labels: labels,conditionIndex: conditionIndex,conditions: conditions,show: show}}"/>
+		</view>
+	</view>
+</view>
+
+<view class="body">
+	<view class="fix">
+		<view class="l pct50" wx:for="{{list}}" wx:key="id">
+			<view bindtap="bindForDetail" class='p-item' data-idx="{{index}}" data-id="{{item.id}}">
+				<image class="p-item-pic" mode="aspectFill" src="{{baseUrl + item.picture}}"
+					bindload="bindImageLoad"></image>
+				<view class="p10 g6 f12 bgwh">
+					<view wx-if="{{tabFlag == 0}}" class="ell"><image class="seller-logo" src="{{baseUrl + item.seller.picture}}"></image>{{item.seller.name}}</view>
+					<view wx-if="{{tabFlag == 1}}" class="ell">{{item.name}} </view>
+					<view class="weui-flex mt10">
+						<view class="weui-flex__item">{{item.readNumber}} 浏览</view>
+						<view class="weui-flex__item tr">
+							<image class="icon" src='/images/icon/favor_0.png'></image>{{item.collectionNumber}}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<include src="/pages/common/loadMore.wxml" />
+</view>

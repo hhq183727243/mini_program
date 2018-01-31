@@ -1,0 +1,26 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
+<view class="weui-article">
+    <view class='h1'>{{article.title}}</view>
+
+    <view class="weui-flex bottom-line lh26">
+        <view class="mb5">
+            浏览次数：
+            <text class="showNum">{{article.readNumber}}</text>
+        </view>
+        <view class="weui-flex__item tr mb5">时间：{{article.datetime}}</view>
+    </view>
+
+    <view class="weui-article-txt mt10">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+</view>
+
+
+<view class="weui-footer_fixed-bottom">
+	<navigator class="weui-btn-area" url="/pages/addUserInfo/addUserInfo">
+		<button type="primary">10秒免费获取报价</button>
+	</navigator>
+</view>
+
+<include src="/pages/common/footer.wxml" />

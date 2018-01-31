@@ -1,0 +1,67 @@
+<view class="search_head bottom-line">
+	<view class="weui-search-bar {{searchFocus ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+		<form class="weui-search-bar__form">
+			<view class="weui-search-bar__box">
+				<text class="weui-icon-search"></text>
+				<input type="text" confirm-type="search" class="weui-search-bar__input" focus="{{searchFocus}}" value="{{searchKey}}" placeholder="搜索" bindblur="bindSearchBlur"/>
+				<text class="weui-icon-clear" bindtap="bindClearSearchKey"></text>
+			</view>
+			<view class="weui-search-bar__label" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);" bindtap="bindSearchText">
+				<view class="weui-icon-search"></view>
+				<text>搜索</text>
+			</view>
+		</form>
+		<text class="weui-search-bar__cancel-btn" bindtap="bindSearchCancel">取消</text>
+	</view>
+
+	<view class="filter">
+		<view class="weui-flex">
+			<view class="weui-flex__item">
+				<view class='f-sort' hover-class="bg-dark">综合</view>
+			</view>
+			<view class="weui-flex__item">
+				<view class='f-sort' hover-class="bg-dark">销量</view>
+			</view>
+			<view class="weui-flex__item">
+				<view class='f-sort' hover-class="bg-dark">价格</view>
+			</view>
+			<view class="weui-flex__item">
+				<navigator class='f-sort' url="/pages/conditionSelect/conditionSelect">筛选</navigator>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--下拉刷新样式 -->
+<view class="reflesh_panel">
+	<image src='/images/loading.gif'></image>
+</view>
+
+<view>
+	<view class="weui-panel weui-panel_access">
+		<view class="weui-panel__bd">
+			<navigator class="weui-media-box weui-media-box_appmsg" url="detail/detail?id={{item.id}}" wx:for="{{productionList}}" wx:key="id">
+				<view class="weui-media-box__hd">
+					<image class="weui-media-box__thumb" src="{{baseUrl + item.picture}}" />
+				</view>
+				<view class="weui-media-box__bd ">
+					<view class="media_title">{{item.name}}</view>
+					<view class="production_info aic weui-flex mt5">
+						<view class='weui-flex__item weui-cell_warn' wx:if="{{item.discountType == 0}}">
+							￥<text class="f16">{{item.price}}</text>
+						</view>
+						<block wx:if="{{item.discountType != 0}}">
+							<view class='weui-flex__item weui-cell_warn'>
+								￥<text class="f16">{{item.discountPrice}}</text>
+							</view>
+							<view class='weui-flex__item delete-price'>￥{{item.price}}</view>
+						</block>
+						<view class='weui-flex__item tr'>{{item.sellNumber}}人购买</view>
+					</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+	<include src="/pages/common/loadMore.wxml" />
+</view>

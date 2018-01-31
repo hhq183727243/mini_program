@@ -1,0 +1,8 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
+<view class="weui-article">
+	<view class='h1'>{{seller.name}}</view>
+	<view class="weui-article-txt" cstyle='text-align: justify;'>
+		<template is="wxParse" data="{{wxParseData:content.nodes}}" />
+	</view>
+</view>

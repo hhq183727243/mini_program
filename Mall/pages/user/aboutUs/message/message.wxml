@@ -1,0 +1,15 @@
+<form bindsubmit="formSubmit">
+	<view class="weui-cells__title">留言建议</view>
+	<view class="weui-cells weui-cells_form">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">
+				<textarea class="weui-textarea" name="content" maxlength='200' bindinput="bindinput" placeholder="说点什么吧..."/>
+				<view class="weui-textarea-counter">{{wordsNumber}}/200</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-btn-area">
+		<button type="primary" formType="submit">提交</button>
+	</view>
+</form>	

@@ -1,0 +1,6 @@
+<view class="weui-footer">
+	<view class="weui-footer__links">
+		<view class="weui-footer__link">ICP备案：闽ICP备17012872号</view>
+	</view>
+	<view class="weui-footer__text">Copyright © 2017 厦门居装网络科技有限公司, All Rights Reserved. </view>
+</view>

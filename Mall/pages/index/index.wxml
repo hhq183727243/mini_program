@@ -1,0 +1,160 @@
+<!--banner -->
+<swiper indicator-dots="true" autoplay="true" interval="3000" duration="300">
+    <block wx:for="{{banner}}">
+        <swiper-item>
+            <image src="../../images/test/{{item}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!--快速入口   -->
+<view class="kuaisu-rukou bottom-line">
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=奶粉'>
+				<image class="ks-icon icon-bg1" src='../../images/home/nf.png'/>
+				<view class='mt5'>奶粉</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=奶瓶'>
+				<image class="ks-icon icon-bg2" src='../../images/home/np.png'/>
+				<view class='mt5'>奶瓶</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=尿布'>
+				<image class="ks-icon icon-bg3" src='../../images/home/nk.png'/>
+				<view class='mt5'>尿布</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=洗护'>
+				<image class="ks-icon icon-bg4" src='../../images/home/xh.png'/>
+				<view class='mt5'>洗护</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=零食'>
+				<image class="ks-icon icon-bg5" src='../../images/home/ls.png'/>
+				<view class='mt5'>零食</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=玩具'>
+				<image class="ks-icon icon-bg6" src='../../images/home/wj.png'/>
+				<view class='mt5'>玩具</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' url='/pages/production/production?searchKey=服饰'>
+				<image class="ks-icon icon-bg7" src='../../images/home/yf.png'/>
+				<view class='mt5'>服饰</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item' open-type="switchTab" url='/pages/conditionSelect/conditionSelect'>
+				<image class="ks-icon icon-bg8" src='../../images/home/gd.png'/>
+				<view class='mt5'>更多</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<template name="goodsItem">
+	<navigator class="goods-item-inner {{index%2 == 0 ? 'bre' : ''}}" url="/pages/production/detail/detail?id={{item.id}}">
+		<image mode="aspectFit" class="goods-cover" src="{{baseUrl + item.picture}}"></image>
+		<view class="mt5 ell f12">{{item.name}}</view>
+		<view class="mt5 weui-flex aic">
+			<view class="weui-cell_warn mr10" wx:if="{{item.discountType == 0}}">￥{{item.price}}</view>
+			<block wx:if="{{item.discountType != 0}}">
+				<view class='weui-cell_warn mr10 weui-cell_warn'>￥{{item.discountPrice}}</view>
+				<view class='weui-flex__item delete-price f12'>￥{{item.price}}</view>
+			</block>
+		</view>
+	</navigator>
+</template>
+
+<view class="mt20">
+	<view class="weui-flex">
+		<view class="weui-flex__item coupons-bg1">
+			<view class="weui-flex aic coupons-item">
+				<view class="weui-flex__item tc">
+					￥<text class="f30">20</text>
+				</view>
+				<view class="weui-flex__item">
+					<view class="f18">优惠券</view>
+					<view class="f12">点击领取</view>
+				</view>
+			</view>
+		</view>
+		<view class="weui-flex__item coupons-bg2">
+			<view class="weui-flex aic coupons-item">
+				<view class="weui-flex__item tc">
+					￥<text class="f30">50</text>
+				</view>
+				<view class="weui-flex__item">
+					<view class="f18">优惠券</view>
+					<view class="f12">点击领取</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--猜你喜欢  -->
+<view class="mt20 bgwh">
+	<view class="tag-title stl1">
+		<view class="tag-title-bg">
+			<view class="left_triangle"></view>
+			<view class="right_triangle"></view>
+			猜你喜欢
+		</view>
+	</view>
+
+	<view class="fix mt10 bte">
+		<view class="goods-item" wx:for="{{4}}">
+			<template is="goodsItem" data="{{item: item,index: index,baseUrl: baseUrl}}"/>
+		</view>
+	</view>
+</view>
+
+<!--新品上线  -->
+<view class="mt20 bgwh">
+	<view class="tag-title stl2">
+		<view class="tag-title-bg">
+			<view class="left_triangle"></view>
+			<view class="right_triangle"></view>
+			新品上线
+		</view>
+	</view>
+
+	<view class="fix mt10 bte">
+		<view class="goods-item" wx:for="{{latestList}}">
+			<template is="goodsItem" data="{{item: item,index: index,baseUrl: baseUrl}}"/>
+		</view>
+	</view>
+</view>
+
+<!--店铺推荐  -->
+<view class="mt20 bgwh">
+	<view class="tag-title stl3">
+		<view class="tag-title-bg">
+			<view class="left_triangle"></view>
+			<view class="right_triangle"></view>
+			店铺推荐
+		</view>
+	</view>
+
+	<view class="fix mt10 bte">
+		<view class="goods-item" wx:for="{{6}}">
+			<template is="goodsItem" data="{{item: item,index: index,baseUrl: baseUrl}}"/>
+		</view>
+	</view>
+</view>
+
+<view class="weui-loadmore weui-loadmore_line">
+	<navigator class="weui-loadmore__tips" url="/pages/production/production">查看更多</navigator>
+</view>

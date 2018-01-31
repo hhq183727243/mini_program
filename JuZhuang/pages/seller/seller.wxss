@@ -1,0 +1,42 @@
+@import "../selectAddress/selectAddress.wxss";
+
+.weui-tab__panel{ 
+	background-color: rgba(0, 0, 0, 0.5)
+}
+.weui-tab__panel.h-auto,
+.weui-tab.h-auto{ height: auto; }
+
+.ks-item{
+	position: relative;
+	text-align: center;
+	line-height: 42px;
+	font-size: 12px;
+}
+.ks-item.active{ color: #f30213; }
+
+.ks-item:before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-right: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+
+.weui-flex__item:last-child .ks-item:before {
+	content: none;
+}
+
+/* 免费设置按钮定位 */
+.free-design-btn{
+	position: absolute;
+	right: 0;
+	bottom: 0px;
+}
+.free-design-btn button{ vertical-align: top; font-size: 12px;}

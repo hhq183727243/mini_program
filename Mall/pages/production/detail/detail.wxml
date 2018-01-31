@@ -1,0 +1,101 @@
+<import src="/pages/common/weui_template.wxml" />
+<import src="/wxParse/wxParse.wxml" />
+
+<!--banner -->
+<swiper indicator-dots="true" duration="300" indicator-active-color="#f30213" style="height:{{screenWidth}}px">
+    <block wx:for="{{attachmentList}}" wx:key="id">
+        <swiper-item>
+            <image mode="aspectFit" src="{{baseUrl + item.path}}" class="slide-image" />
+        </swiper-item>
+    </block>
+</swiper>
+<view class="bottom-line top-line p_name">
+    <view>{{entity.name}}</view>
+    <view class="mt10 weui-cell_warn">
+		<block wx:if="{{entity.discountType == 0}}">
+			￥<text class="f18">{{entity.price}}</text>
+		</block>
+		<block wx:if="{{entity.discountType != 0}}">
+			￥<text class="f18">{{entity.discountPrice}}</text>
+			<text class="delete-price ml10 g9">￥{{entity.price}}</text>
+		</block>
+    </view>
+    <view class="mt10 g9 f12">
+        <text>库存：{{entity.remainderNumber}}</text>
+        <text class="ml10">销量：{{entity.sellNumber}}</text>
+		<text class="ml10">收藏：{{entity.collectionNumber}}</text>
+    </view>
+</view>
+
+<view class="weui-cells">
+    <navigator class="weui-cell weui-cell_access" url="/pages/comment/comment">
+        <view class="weui-cell__bd f14">评价（{{entity.evaluationNumber}}）</view>
+		<view class="weui-cell__ft"></view>
+    </navigator>
+</view>
+
+<view class="weui-cells">
+	<view class="product-detai bottom-line">商品详情</view>
+
+	<view class="pt10">
+		<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+	</view>
+</view>
+
+
+
+<!--start: footer-->
+<view class="footer-kong"></view>
+<view class="footer">
+    <view class="footer-item rel" bindtap="bindToggleConllect">
+        <image src="/images/icon/{{isCollected ? 'favor_1.png' : 'favor_0.png'}}"></image>
+        <text>{{isCollected ? '已收藏' : '收藏'}}</text>
+		<button wx:if="{{!loginStatus && canIUse}}" class="get-userinfo-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo"></button>
+    </view>
+    <view class="footer-item">
+        <image src="/images/icon/comment.png"></image>
+        <text>客服</text>
+    </view>
+	<view class="f-btn-wrap">
+    	<view class="add-cart">加入购物车</view>
+	</view>
+    <view class="f-btn-wrap">
+		<view class="btn-bug" bindtap="showPanel">立即购买</view>
+	</view>
+</view>
+<!--end: footer-->
+
+<view class="goods-attr" hidden="{{!isShowPanel}}">
+	<view class="goods-attr-mask" bindtap="hidePanel"></view>
+	<view class="goods-attr-inner">
+		<view class="weui-flex weui-cells__title aic" style='margin-top:0;'>
+			<view class="mr15">
+				<image mode="aspectFit" class="goods-cover" src="{{baseUrl + entity.picture}}"></image>
+			</view>
+			<view class="weui-flex__item">
+				<view class="weui-cell_warn">￥60.55</view>
+			</view>
+		</view>
+		
+		<view class="weui-cells">
+			<view class="weui-cell">
+				<view class="weui-cell__hd g9">数量：</view>
+				<view class="weui-cell__bd">
+					<view class="stepper l">
+						<text class="{{buyNumber == 1 ? 'disabled' : ''}}" bindtap="bindMinus">-</text>
+						<input type="number" bindchange="bindManual" value="{{buyNumber}}" />
+						<text class="normal" bindtap="bindPlus">+</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="weui-cell weui-cell_select">
+				<view class="weui-cell__hd g9">类型：</view>
+				<view class="weui-cell__bd">红色</view>
+			</view>
+		</view>
+		<navigator class="mt10" url='/pages/pay/pay'>
+			<button class="next-btn" type="warn">下一步</button>
+		</navigator>
+	</view>
+</view>

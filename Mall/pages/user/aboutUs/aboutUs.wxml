@@ -1,0 +1,11 @@
+<import src="/pages/common/weui_template.wxml"/>
+
+<view>
+    <view class="weui-cells m_top10">
+        <template is="cell_navigator" 
+			data="{{icon: 'detail.png',label: '商家介绍',url: 'detail/detail'}}"/>
+        
+		<template is="cell_navigator" 
+			data="{{icon: 'message.png',label: '留言建议',url: 'message/message'}}"/>
+    </view>
+</view>

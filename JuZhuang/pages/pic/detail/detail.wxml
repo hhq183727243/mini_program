@@ -1,0 +1,27 @@
+<swiper duration="300" style="height: 65%;" bindchange="bindSwiperChange">
+    <block wx:for="{{attachmentList}}" wx:key="id">
+        <swiper-item>
+            <image mode='aspectFit' src="{{baseUrl + item.path}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="p15 wh">
+	<view class="ell f16" wx:if="{{attachmentList.length > 0}}">{{attachmentList[swiperIndex].synopsis}}</view>
+	<view class="weui-flex mt10">
+		<view class="weui-flex__item">{{product.readNumber}} 浏览</view>
+		<view class="weui-flex__item tc">{{swiperIndex + 1}}/{{attachmentList.length}}</view>
+		<view class="weui-flex__item tr rel">
+			<view bindtap="bindToggleConllect">
+				<image class="icon" src="/images/icon/{{isCollected ? 'favor_1.png' : 'favor_wh.png'}}"></image>{{product.collectionNumber}}
+			</view>
+			<button wx:if="{{!loginStatus && canIUse}}" class="get-userinfo-btn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo"></button>
+		</view>
+	</view>
+</view>
+
+<view class="weui-btn-area">
+	<navigator url='/pages/addUserInfo/addUserInfo'>
+		<button type='warn'>免费获取装修报价</button>
+	</navigator>
+</view>

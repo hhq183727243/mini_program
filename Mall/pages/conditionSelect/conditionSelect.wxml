@@ -1,0 +1,21 @@
+<view class="weui-flex category">
+	<scroll-view scroll-y class="category-tab">
+		<view class="li bottom-line {{currentIndex == -1 ? 'active' : ''}}" bindtap="showSubcategory" data-name="历史记录" data-index="-1">历史记录</view>
+		<view class="li bottom-line {{currentIndex == index ? 'active' : ''}}" wx:for="{{categoryList}}" :key="id" bindtap="showSubcategory" data-name="{{item.name}}" data-index="{{index}}">{{item.name}}</view>
+		<view class="li bottom-line {{currentIndex == -2 ? 'active' : ''}}" bindtap="showSubcategory" data-name="品牌" data-index="-2">品牌</view>
+	</scroll-view>
+	<view class="weui-flex__item category-content">
+		<!-- <view class="tag" bindtap="bindSelectCondition" wx:for="{{subCategoryList}}" :key="id" data-name="{{item.name}}">{{item.name}}</view> -->
+		<view class="fix tags_list {{(index === rowList.length - 1) ? 'justify_start' : ''}}" 
+			wx:for="{{rowList}}" 
+			wx:for-item="tagList">
+			<view class="tag {{item.borderColor}}" 
+				wx:for="{{tagList}}" 
+				bindtap="bindSelectCondition" 
+				data-name="{{item.name}}" 
+				style="width:{{item.width - ((index === tagList.length - 1) ? 0 : 5)}}px">{{item.name}}</view>
+		</view>
+
+		<view wx:if="{{rowList.length == 0}}">无相关数据</view>
+	</view>
+</view>

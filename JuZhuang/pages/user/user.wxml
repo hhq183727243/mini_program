@@ -1,0 +1,38 @@
+<import src="/pages/common/weui_template.wxml"/>
+
+<view>
+    <view class="userinfo tc" wx-if="{{loginStatus}}">
+        <view class="dib">
+            <image class="userhead" src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="mt10 wh f16">{{userInfo.nickName}}</view>
+    </view>
+
+    <view class="userinfo tc" wx-if="{{!loginStatus}}">
+        <view class="dib" bindtap="onLogin">
+            <image class="userhead" src="/images/user.png" />
+        </view>
+        <view class="mt10 wh f16" bindtap="onLogin">点击登录</view>
+    </view>
+
+	<view class="weui-cells">
+        <template is="cell_navigator" 
+			data="{{icon: 'favor_0.png',label: '我的收藏',url: 'myCollected/myCollected'}}"/>
+		<template is="cell_navigator" 
+			data="{{icon: 'about-us.png',label: '关于我们',url: 'aboutUs/aboutUs'}}"/>
+
+		<view class="weui-cell" wx:if="{{setScreenBrightness}}">
+            <view class="weui-cell__hd">
+                <image src="/images/icon/ye_jian.png" />
+            </view>
+            <view class="weui-cell__bd">夜间模式</view>
+            <view class="weui-cell__ft">
+                <switch checked bindchange="switch1Change" />
+            </view>
+        </view>
+	</view>
+
+    <!-- <view class="weui-btn-area m_top10" hidden="{{loginStatus}}">
+        <button type="primary" open-type="getUserInfo" bindgetuserinfo="onLogin">点击登录</button>
+    </view> -->
+</view>

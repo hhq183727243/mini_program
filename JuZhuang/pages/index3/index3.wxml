@@ -1,0 +1,110 @@
+<!--banner -->
+<swiper indicator-dots="true" autoplay="true" indicator-active-color="#B11317" interval="3000" duration="300">
+    <block wx:for="{{banner}}">
+        <swiper-item>
+            <image mode="aspectFill" src="{{baseUrl + item.picture}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="bgwh p10">
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class="bao-jia zxth-warp mr5" url="/pages/activity/activity">
+				<text class="txt">装修特惠</text> 
+				<text class="icon">HOT</text>
+				<view class="mt10 g9 f12">疯抢中</view>
+				<image class="zxth" src='/images/home/mfsj.png'></image>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class="bao-jia" url="/pages/addUserInfo/addUserInfo">
+				<view class="rel zx1">
+					<text class="txt">免费报价</text> 
+					<text class="icon">HOT</text>
+					<view class="mt10 g9 f12">1 分钟了解装修花多少钱</view>
+				</view>
+				<image class="mfbj" src='/images/home/deng.png'></image>
+			</navigator>
+
+			<navigator class="bao-jia mt5" url="/pages/freeDesign/freeDesign">
+				<view class="rel zx1">
+					<text class="txt">免费设计</text> 
+					<text class="icon">HOT</text>
+					<view class="mt10 g9 f12">3 天出全屋设计图</view>
+				</view>
+				<image class="mfsj" src='/images/home/zhuo.png'></image>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<view class="mt15 bgwh p10">
+	<view class="weui-flex">
+		<view class="weui-flex__item tr">
+			<view class='mt15 f16 b'>装修就找</view>
+			<view class='mt2 g9'>累计服务业主53800次</view>
+		</view>
+		<view class="weui-flex__item">
+			<image class="ad-logo ml10" src='/images/logo_.png'></image>
+		</view>
+	</view>
+</view>
+
+<view class="mt15 bgwh pb15">
+	<view class="section-title">
+		<text class="f16">热门装修</text>
+		<navigator class="r weui-cell_link" open-type="switchTab" url="/pages/pic/pic">更多 ></navigator>
+	</view>
+
+	<view class="pl10 pr10">
+		<view class="weui-tab">
+			<view class="weui-navbar">
+				<view bindtap="bindChangeProductTab" data-idx="0" class="weui-navbar__item {{pCurretnIndex == 0 ? 'weui-bar__item_on' : ''}}">按空间</view>
+				<view bindtap="bindChangeProductTab" data-idx="1" class="weui-navbar__item {{pCurretnIndex == 1 ? 'weui-bar__item_on' : ''}}">按风格</view>
+				<view bindtap="bindChangeProductTab" data-idx="2" class="weui-navbar__item {{pCurretnIndex == 2 ? 'weui-bar__item_on' : ''}}">按户型</view>
+			</view>
+			<view class="weui-tab__panel">
+				<view wx:for="{{pList}}" wx:for-index="idx" hidden='{{pCurretnIndex != idx}}'>
+					<scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+						<navigator class="demo-item" wx:for="{{pList[idx]}}" url="/pages/pic/detail/detail?id={{item.id}}">
+							<image mode="aspectFill" src='{{baseUrl + item.picture}}'></image>
+							<view class="demo-info tc">
+								<view class="ell">{{item.name}}</view>
+							</view>
+						</navigator>
+					</scroll-view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="mt15 bgwh pb15">
+	<view class="section-title">
+		<text class="f16">装修学堂</text>
+		<navigator class="r weui-cell_link" url="/pages/article/article?currentIndex={{aCurretnIndex}}">更多 ></navigator>
+	</view>
+
+	<view class="pl10 pr10">
+		<view class="weui-tab">
+			<view class="weui-navbar">
+				<view bindtap="bindChangeArticleTab" data-idx="0" class="weui-navbar__item {{aCurretnIndex == 0 ? 'weui-bar__item_on' : ''}}">装修日记</view>
+				<view bindtap="bindChangeArticleTab" data-idx="1" class="weui-navbar__item {{aCurretnIndex == 1 ? 'weui-bar__item_on' : ''}}">知识问答</view>
+				<view bindtap="bindChangeArticleTab" data-idx="2" class="weui-navbar__item {{aCurretnIndex == 2 ? 'weui-bar__item_on' : ''}}">装修学堂</view>
+			</view>
+			<view class="weui-tab__panel">
+				<view wx:for="{{aList}}" wx:for-index="idx" hidden='{{aCurretnIndex != idx}}'>
+					<navigator class="pb10 pt10 bottom-line weui-cell_access weui-flex" wx:for="{{aList[idx]}}" wx:key="id" url="/pages/article/detail/detail?id={{item.id}}">
+						<view class="weui-cell__bd ell">{{item.title}}</view>
+						<view class="weui-cell__ft"></view>
+					</navigator>
+
+					<view class="weui-loadmore weui-loadmore_line" wx:if="{{aList_1.length == 0}}">
+						<view class="weui-loadmore__tips">暂无数据</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

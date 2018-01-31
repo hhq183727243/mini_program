@@ -1,0 +1,16 @@
+@import "../selectAddress/selectAddress.wxss";
+
+.header{
+	background-color: #f30213;
+	color: #fff;
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.seller-logo{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #fff;
+}

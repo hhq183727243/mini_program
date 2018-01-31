@@ -1,0 +1,63 @@
+<!--banner -->
+<swiper indicator-dots="true" autoplay="true" interval="3000" duration="300">
+    <block wx:for="{{banner}}">
+        <swiper-item>
+            <image src="/images/test/{{item}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!--快速入口   -->
+<view class="kuaisu-rukou bottom-line">
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-1'></view>
+				<view class='mt5'>涂料计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-2'></view>
+				<view class='mt5'>地板计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-3'></view>
+				<view class='mt5'>壁纸计算器</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="weui-flex">
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-4'></view>
+				<view class='mt5'>墙砖计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-5'></view>
+				<view class='mt5'>窗帘计算器</view>
+			</navigator>
+		</view>
+		<view class="weui-flex__item">
+			<navigator class='ks-item'>
+				<view class='ks-icon ks-icon-6'></view>
+				<view class='mt5'>地砖计算器</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<import src="/pages/common/weui_template.wxml"/>
+
+<view class="mt10 bgwh">
+	<view class="section-title">装修效果</view>
+	<template is="navbar" data="{{currentIndex: currentIndex,labels: ['家装效果','工装效果','美图专题','名师设计'],panelContent: 'index2',list: demoList}}"/>
+
+	<view class="weui-loadmore weui-loadmore_line">
+		<text class="weui-loadmore__tips">查看更多 ->></text>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+/* pages/user/address/address.wxss */
+
+.address{  
+	width:100%;
+	padding: 10px 15px;
+    line-height: 2;
+	box-sizing: border-box;
+}

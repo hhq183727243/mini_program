@@ -1,0 +1,105 @@
+/**index.wxss**/
+swiper{
+	height: 140px;
+}
+
+swiper image{ 
+	width: 100%;
+	height: 100%; 
+}
+
+.kuaisu-rukou{
+	background-color: #fff;
+}
+.ks-icon{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	padding: 5px;
+}
+.icon-bg1{background-color: #FF3E3E; }
+.icon-bg2{background-color: #FFA13E; }
+.icon-bg3{background-color: #48B32D; }
+.icon-bg4{background-color: #2DB37C; }
+.icon-bg5{background-color: #00B5C8; }
+.icon-bg6{background-color: #007AC2; }
+.icon-bg7{background-color: #845CFB; }
+.icon-bg8{background-color: #D846E9; }
+
+.ks-item{
+	padding: 10px;
+	text-align: center;
+}
+
+/* 优惠券 */
+.coupons-bg1{ background-color: #FFA57D }
+.coupons-bg2{ background-color: #FCC177 }
+.coupons-item{
+	margin: 15rpx;
+	padding: 15rpx;
+	border: 1px dashed #fff;
+	color: #fff;
+}
+
+.tag-title{
+	position: relative;
+	height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+}
+.tag-title-bg{
+	display: inline-block;
+    position: relative;
+    top: -3px;
+    width: 140px;
+    margin-top: -3px;
+    font-size: 16px;
+}
+.left_triangle {
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-bottom: 4px solid #c84e4e;
+    border-left: 4px solid transparent;
+    font-size: 0;
+    line-height: 0;
+}
+.right_triangle {
+    position: absolute;
+    top: 0;
+    right: -4px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-bottom: 4px solid #c84e4e;
+    border-right: 4px solid transparent;
+    font-size: 0;
+    line-height: 0;
+}
+
+.stl1{  border-top: 1px solid #f22e31; }
+.stl1 .tag-title-bg{  background-color: #f22e31; }
+
+.stl2{  border-top: 1px solid #fb744b; }
+.stl2 .tag-title-bg{  background-color: #fb744b; }
+
+.stl3{  border-top: 1px solid #f39156; }
+.stl3 .tag-title-bg{  background-color: #f39156; }
+
+/* 商品样式 */
+.goods-item{
+	width: 50%;
+	float: left;
+}
+.goods-item-inner{ 
+	padding: 5px; 
+	border-bottom: 1px solid #eee;
+}
+.goods-cover{ 
+	width: 100%;
+	height: 250rpx;
+}

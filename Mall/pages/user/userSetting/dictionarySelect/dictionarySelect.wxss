@@ -1,0 +1,57 @@
+page{
+    padding-top: 50px;
+}
+
+.weui-cells{ margin-top: -1px; }
+
+.search_wrap{
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.selected_item{ 
+    position: relative;
+    padding-right: 50px;
+}
+.remove_btn{  
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.remove_btn:before {
+    width: 2px;
+    height: 16px;
+}
+.remove_btn:after {
+    width: 16px;
+    height: 2px;
+}
+.remove_btn:before, 
+.remove_btn:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+}
+
+/* 标签已选择5个后不能再选择 */
+.mask{
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(248, 248, 248, 0);
+}

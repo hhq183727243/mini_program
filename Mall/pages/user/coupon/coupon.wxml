@@ -1,0 +1,4 @@
+<import src="../../common/weui_template.wxml"/>
+
+<template is="navbar" 
+			data="{{currentIndex: currentIndex,labels: ['未使用','已使用','已过期'],panelContent: 'coupon',list: couponList}}"/>

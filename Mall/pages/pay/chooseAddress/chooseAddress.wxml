@@ -1,0 +1,25 @@
+<radio-group class="radio-group" bindchange="radioChange">
+<view class="weui-panel weui-panel_access">
+	<view class="weui-panel__hd">
+		<image class="icon" src="/images/icon/address.png" />
+		<text class="g3">收货地址</text>
+	</view>
+	<view class="weui-panel__bd">
+		<label class="weui-media-box weui-media-box_appmsg" wx:for="{{addressList}}" wx:key="id">
+			<view>
+				<radio value="{{item.id}}" name="address"/>
+			</view>
+			<view class="weui-media-box__bd ">
+				<view class="weui-media-box__title">刘德华，13898232228</view>
+				<view class="weui-media-box__desc">福建 厦门市 思明区 火炬高新区软件园一期创新大厦B区202室</view>
+			</view>
+		</label>
+	</view>
+	<view class="weui-panel__ft">
+		<navigator class="weui-cell weui-cell_access weui-cell_link" open-type='redirect' url='/pages/user/address/add/add'>
+			<view class="weui-cell__bd">+ 新增收货地址</view> 
+			<view class="weui-cell__ft"></view>
+		</navigator>    
+	</view>
+</view>
+</radio-group>

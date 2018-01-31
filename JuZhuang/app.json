@@ -1,0 +1,58 @@
+{
+    "pages": [
+        "pages/index3/index3",
+        "pages/user/user",
+        "pages/user/aboutUs/aboutUs",
+        "pages/pic/pic",
+        "pages/pic/detail/detail",
+        "pages/addUserInfo/addUserInfo",
+        "pages/article/article",
+        "pages/article/detail/detail",
+        "pages/freeDesign/freeDesign",
+        "pages/activity/activity",
+        "pages/user/myCollected/myCollected",
+        "pages/seller/seller",
+        "pages/seller/detail/detail",
+        "pages/production/production",
+        "pages/payDesign/payDesign"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#f30213",
+        "navigationBarTitleText": "找装修就上居装网",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "position": "bottom",
+        "color": "#333",
+        "selectedColor": "#f30213",
+        "backgroundColor": "#f8f8f8",
+        "list": [
+            {
+                "pagePath": "pages/index3/index3",
+                "iconPath": "images/nav/home_0.png",
+                "selectedIconPath": "images/nav/home_1.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/pic/pic",
+                "iconPath": "images/nav/pic_0.png",
+                "selectedIconPath": "images/nav/pic_1.png",
+                "text": "图库"
+            },
+            {
+                "pagePath": "pages/seller/seller",
+                "iconPath": "images/nav/seller_0.png",
+                "selectedIconPath": "images/nav/seller_1.png",
+                "text": "装修公司"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "images/nav/user_0.png",
+                "selectedIconPath": "images/nav/user_1.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

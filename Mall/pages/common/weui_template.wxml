@@ -1,0 +1,78 @@
+<!--cell 不带跳转  -->
+<template name="cell_normal">
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="/images/icon/{{icon}}" />
+        </view>
+        <view class="weui-cell__bd">{{label}}</view>
+        <view class="weui-cell__ft"></view>
+    </view>
+</template>
+
+<!--cell 带跳转  -->
+<template name="cell_navigator">
+    <navigator class="weui-cell weui-cell_access" url="{{url}}">
+        <view class="weui-cell__hd">
+            <image src="/images/icon/{{icon}}" />
+        </view>
+        <view class="weui-cell__bd">{{label}}</view>
+        <view class="weui-cell__ft"></view>
+    </navigator>
+</template>
+
+<!--tab  -->
+<template name="navbar">
+    <view class="weui-tab">
+        <view class="weui-navbar">
+            <view wx:for="{{labels}}" wx:key="*this" class="weui-navbar__item {{currentIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="changeTab" data-index='{{index}}'>{{item}}</view>
+        </view>
+        <view class="weui-tab__panel">
+			<block wx:for="{{list}}" wx:key="id">
+				<template is="{{panelContent}}" data="{{item: item,index: index}}"/>
+			</block>
+        </view>
+    </view>
+</template>
+
+<!--订单模板  -->
+<template name="order">
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">订单号：29099222652457012
+			<text class="r">1件</text>
+		</view>
+        <view class="weui-panel__bd">
+            <navigator class="weui-media-box weui-media-box_appmsg" url="">
+                <view class="weui-media-box__hd">
+					<image class="weui-media-box__thumb" src="../../../images/test/tu5.jpg" />
+				</view>
+				<view class="weui-media-box__bd ">
+					<view class="media_title">华为荣耀7i手机壳 ATH-AL00全包磨砂TL00H保护套CL男女款防摔外壳</view>
+					<view class="weui-media-box__desc mt5">
+						<text class="weui-cell_warn">￥15.80</text>
+						<text class="r">2017-07-24</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+</template>
+
+<!--优惠券模板  -->
+<template name="coupon">
+    <view class="quan-item">
+		<view class="quan-item-inner">
+			<view class="q-price">
+				<text>¥</text>
+				<text class="strong">120</text>
+				<text class="q-limit">满199可用</text>
+			</view>
+			<view class="q-range">
+				<view class="txt">限购  [好想你官方旗舰店] 店铺部分商品</view>
+				<view class="txt">有效期：2017.10.10 - 2017.10.16</view>
+			</view>
+			<view class="q-opbtns">
+				<view class="txt">优惠券</view>
+			</view>
+		</view>
+	</view>
+</template>

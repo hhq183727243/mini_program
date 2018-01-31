@@ -1,0 +1,10 @@
+<view class="container text_center p_top10">
+    
+    <icon class="m_top35" type="success" size="100"></icon>
+    <view class="m_top20 f_bold result_tip">{{title}}</view>
+
+    <view class="m_top20">
+        <button type="primary" bindtap="mainHandleTap">{{mainBtnText}}</button>
+        <button class="m_top10" type="default" bindtap="secondaryHandleTap" wx:if="{{btnText2 != ''}}">{{secondaryBtnText}}</button>
+    </view>
+</view>

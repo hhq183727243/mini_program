@@ -1,0 +1,33 @@
+<import src="/pages/common/form_template.wxml"/>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<view class="weui-cells weui-cells_form">
+		<template is="input_text" 
+			data="{{base: ['联系人','text','name','名字',true],value: address['name']}}"/>
+
+
+		<template is="input_text" 
+			data="{{base: ['手机号码','number','tel','11位手机号码',true],value: address['tel']}}"/>
+
+		<view class="weui-cell">
+			<view class="weui-cell__hd">
+				<label for="" class="weui-label">选择地区</label>
+			</view>
+			<view class="weui-cell__bd">
+				<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+					<view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+				</picker>
+			</view>
+		</view>
+
+		<template is="input_text" 
+			data="{{base: ['详细地址','text','detail','街道门牌信息',true],value: address['detail']}}"/>
+
+		<template is="input_text" 
+			data="{{base: ['邮政编码','number','zipCode','邮政编码',false],value: address['zipCode']}}"/>
+	</view>
+
+	<view class="weui-btn-area">
+		<button type="primary" formType="submit">保存</button>
+	</view>
+</form>

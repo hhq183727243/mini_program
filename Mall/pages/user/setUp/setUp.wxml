@@ -1,0 +1,13 @@
+<!-- 订阅页面 -->
+<view>
+    <view class="weui-cells">
+        <view class="weui-cell" bindtap="clearStorage">
+            <view class="weui-cell_hd"><image class="icon_img" src="../../../images/icon/usercenter_clear.png" /></view>
+            <view class="weui-cell_bd">清除缓存</view>
+        </view>
+        <navigator class="weui-cell weui-cell_select" url="aboutUs/aboutUs">
+            <view class="weui-cell_hd"><image class="icon_img" src="../../../images/icon/usercenter_about.png" /></view>
+            <view class="weui-cell_bd">关于我们</view>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="weui-tab">
+	<view class="weui-navbar">
+		<view bindtap="bindChangeArticleTab" data-idx="0" class="weui-navbar__item {{currentIndex == 0 ? 'weui-bar__item_on' : ''}}">装修日记</view>
+		<view bindtap="bindChangeArticleTab" data-idx="1" class="weui-navbar__item {{currentIndex == 1 ? 'weui-bar__item_on' : ''}}">知识问答</view>
+		<view bindtap="bindChangeArticleTab" data-idx="2" class="weui-navbar__item {{currentIndex == 2 ? 'weui-bar__item_on' : ''}}">装修学堂</view>
+	</view>
+
+	<view class="weui-tab__panel">
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">热门文章</view>
+			<view class="weui-panel__bd">
+				<block wx:for="{{list}}" wx:key="id">
+					<navigator class="weui-media-box weui-media-box_appmsg" 
+						url="detail/detail?id={{item.id}}">
+						<view class="weui-media-box__hd">
+							<image mode='aspectFill' class="weui-media-box__thumb" src="{{baseUrl + item.picture}}" />
+						</view>
+						<view class="weui-media-box__bd ">
+							<view class="weui-media-box__title">{{item.title}}</view>
+							<view class="weui-media-box__desc mt5">{{item.synopsis}}</view>
+						</view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">全部文章</view>
+			<view class="weui-panel__bd">
+				<block wx:for="{{allList}}" wx:key="id">
+					<navigator class="weui-media-box weui-media-box_appmsg" 
+						url="detail/detail?id={{item.id}}">
+						<view class="weui-media-box__hd">
+							<image mode='aspectFill' class="weui-media-box__thumb" src="{{baseUrl + item.picture}}" />
+						</view>
+						<view class="weui-media-box__bd ">
+							<view class="weui-media-box__title">{{item.title}}</view>
+							<view class="weui-media-box__desc mt5">{{item.synopsis}}</view>
+						</view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+
+		<view class="weui-loadmore weui-loadmore_line">
+			<view class="weui-loadmore__tips" wx:if="{{hasMoreArticle}}" bindtap='bindLoadMore'>点击加载更多</view>
+
+			<view class="weui-loadmore__tips" wx:if="{{!hasMoreArticle}}">没有更多文章了</view>
+		</view>
+	</view>
+</view>

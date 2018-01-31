@@ -1,0 +1,62 @@
+/* pages/user/coupons/coupons.wxss */
+page{height: 100%;}
+
+ .quan-item {
+    position: relative;
+    margin: 0 10px 10px;
+    color: #fff;
+    overflow: hidden;
+	padding-right: 40px;
+	background-color: #FF8164;
+}
+.quan-item-inner{
+	margin: 15rpx;
+	padding: 15rpx;
+	border: 1px dashed #fff;
+}
+
+.q-price {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.q-price .strong {
+    display: inline-block;
+    vertical-align: top;
+    font: 34px/1 arial;
+}
+.q-price .q-limit {
+    display: inline-block;
+    height: 20px;
+    padding: 0 2px;
+    margin-top: 9px;
+    margin-left: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    background: rgba(255,255,255,.7);
+    border-radius: 2px;
+    line-height: 20px;
+    color: #f23030;
+    vertical-align: top;
+}
+.q-range .txt {
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.q-opbtns {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 110px;
+    color: #fff;
+}
+.q-opbtns .txt {
+    width: 20px;
+    line-height: 18px;
+    margin: 36px auto 0;
+    color: #f8f8f8;
+    text-align: center;
+}

@@ -1,0 +1,52 @@
+<view class="rel">
+	<image class="free-bg" src="/images/freeDesign/freeBg.jpg"></image>
+	<view class="num">
+		<text class="item1 animated infinite pulse" animation="{{animationData}}" >0</text>
+		<text class="item2 animated infinite pulse" animation="{{animationData}}" >8</text>
+		<text class="item3 animated infinite pulse" animation="{{animationData}}" >8</text>
+	</view>
+</view>
+
+<image class="img_12" src="/images/freeDesign/img_12.jpg"></image>
+
+<form class="p15" style='margin-top: -30px;' bindsubmit="formSubmit">
+	<view class="weui-cells">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">
+				<input class="weui-input" name="contact" maxlength="20" type="text" placeholder="请输入您的姓名" />
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-cells">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">
+				<input class="weui-input" name="mobilephone" maxlength="11" type="number" placeholder="请输入手机号" />
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-cells">
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__bd" bindtap="showAddressSelect">
+				{{region[0]}}
+				{{region[1]}}
+				{{region[2]}}
+			</view>
+		</view>
+	</view>
+
+	<button class="mt20" type='warn' formType="submit">立即申请</button>
+</form>
+
+<view class="mt20 bgwh fix">
+	<image class="img_02" src='/images/freeDesign/img_02.jpg'></image>
+	<image class="img_03" src='/images/freeDesign/img_03.jpg'></image>
+	<image class="img_new fs-1" src='/images/freeDesign/new_01.jpg'></image>
+	<image class="img_new fs-2" src='/images/freeDesign/new_02.jpg'></image>
+	<image class="img_new fs-3" src='/images/freeDesign/new_03.jpg'></image>
+
+	<image class="img_4" src='/images/freeDesign/img_4.jpg'></image>
+</view>
+
+<include src="/pages/selectAddress/selectAddress.wxml"/>

@@ -1,0 +1,38 @@
+<view class="p_bottom20">
+    <view class="weui-search-bar search_wrap">
+        <form class="weui-search-bar__form">
+            <input type="text" class="weui-search-bar__input" bindinput="bindSearchInput" placeholder="搜索"/>
+            <!--<label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                <i class="weui-icon-search"></i>
+                <span>搜索</span>
+            </label>-->
+        </form>
+    </view>
+
+    <view class="tip">
+        <view hidden="{{selectedData.length > 0}}">选择{{flag == 1 ? '临床科室' : '关联标签'}}</view>
+        <view hidden="{{selectedData.length == 0}}">已选择{{flag == 1 ? '科室' : '标签'}} {{selectedData.length}}/5</view>
+    </view>
+
+    <view class="weui-cells m_bottom10" hidden="{{selectedData.length == 0}}">
+        <view class="weui-cell selected_item" wx:for="{{selectedData}}">{{item.name}}
+            <view class="remove_btn" bindtap="bindDeleteTagTap" data-index="{{index}}"></view>
+        </view>
+    </view>
+
+    <view class="weui-cells">
+        <view class="mask" hidden="{{selectedData.length < 5}}" bindtap="bindUnselectTap"></view>
+        <checkbox-group class="radio-group" bindchange="checkboxChange">
+            <label class="weui-cell" wx:for="{{showList}}">
+                 <radio disabled="{{checkboxDisabled}}" checked="{{item.checked}}" value="{{item.id}}"/>{{item.name}}
+            </label>
+        </checkbox-group>
+
+        <label class="weui-cell" wx:if="{{showList.length == 0}}">无相关数据</label>
+    </view>
+
+    <view class="weui-btn-area">
+        <button type="primary" disabled="{{selectedData.length == 0}}" bindtap="bindFinishTap">完成</button>
+    </view>
+</view>
+
